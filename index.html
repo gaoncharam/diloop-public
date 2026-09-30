@@ -1,0 +1,497 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>딜루프랩스 · 소상공인 온라인 매장 관리</title>
+<meta name="description" content="네이버·카카오·당근·인스타그램을 한 번에 정리하고, 매달 필요한 콘텐츠까지 관리합니다. 초기 구축 99,000원 · 월 69,900원.">
+<meta property="og:title" content="딜루프 소상공인 온라인 매장 관리">
+<meta property="og:description" content="가게 홍보, 매달 고민하지 마세요. 네이버·카카오·당근·인스타를 한 번에 정리하고 매달 콘텐츠까지 관리합니다.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#FBF7F1">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap top-in">
+    <a href="#" class="logo" aria-label="딜루프랩스 홈">
+      <span class="logo-mark" aria-hidden="true"></span>
+      <span class="logo-ko">딜루프랩스</span>
+      <span class="logo-en">DILOOP LABS</span>
+    </a>
+    <nav class="nav" aria-label="주요 메뉴">
+      <a href="#service">서비스</a>
+      <a href="#how">운영방식</a>
+      <a href="#price">가격</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <a href="#book" class="btn btn-sm btn-dark">상담 예약하기</a>
+  </div>
+</header>
+
+<main>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap hero-in">
+    <div class="hero-copy">
+      <p class="eyebrow">동네 가게를 위한 온라인 매장 관리</p>
+      <h1>가게 홍보,<br>매달 고민하지 마세요.</h1>
+      <p class="lead">네이버·카카오·당근·인스타를 한 번에 정리하고<br class="br-d"> 매달 필요한 콘텐츠까지 관리합니다.</p>
+      <p class="hero-price"><span>초기 구축 <b>99,000원</b></span><span class="dot" aria-hidden="true">·</span><span>월 <b>69,900원</b></span><small>VAT 포함 · 월 단위 이용</small></p>
+      <div class="cta-row">
+        <a href="#book" class="btn btn-accent">서비스 상담 예약하기</a>
+        <a href="#how" class="btn btn-line">어떻게 관리하는지 보기</a>
+      </div>
+    </div>
+
+    <div class="hero-visual" aria-label="한 번 촬영한 가게 사진과 영상이 인스타 릴스, 네이버 플레이스 소식, 당근 소식, 사진 게시물로 나뉘어 올라가는 예시 화면">
+      <svg class="hv-lines" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M50 52 C 38 46, 30 34, 22 26"/>
+        <path d="M50 52 C 64 46, 72 36, 80 24"/>
+        <path d="M50 52 C 40 62, 30 70, 22 80"/>
+        <path d="M50 52 C 62 62, 70 72, 80 82"/>
+      </svg>
+
+      <!-- 원본 -->
+      <div class="hv-src">
+        <div class="shot">
+          <div class="plate"></div>
+          <span class="rec">● REC</span>
+        </div>
+        <div class="hv-src-cap"><b>오늘 찍은 대표 메뉴</b><span>촬영 원본 1회</span></div>
+      </div>
+
+      <!-- 릴스 -->
+      <div class="hv-card hv-reel">
+        <div class="phone">
+          <div class="phone-screen">
+            <div class="plate plate-sm"></div>
+            <div class="reel-ui"><span class="chip ig">Reels</span><p>퇴근길에 딱,<br>오늘의 한 접시</p></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 네이버 -->
+      <div class="hv-card hv-naver">
+        <div class="mini-head"><span class="ch ch-n">N</span>플레이스 소식</div>
+        <div class="mini-img"><div class="plate plate-xs"></div></div>
+        <p>이번 주 대표 메뉴 안내</p>
+      </div>
+
+      <!-- 당근 -->
+      <div class="hv-card hv-dg">
+        <div class="mini-head"><span class="ch ch-d">당</span>당근 소식</div>
+        <p class="dg-t">동네 이웃님, 오늘 저녁 메뉴 고민되시면</p>
+        <div class="mini-img mini-img-s"><div class="plate plate-xs"></div></div>
+      </div>
+
+      <!-- 사진 게시물 -->
+      <div class="hv-card hv-post">
+        <div class="post-grid"><i></i><i class="p2"></i><i class="p3"></i><i class="p4"></i></div>
+        <div class="mini-head"><span class="ch ch-i">◎</span>사진 게시물</div>
+      </div>
+
+      <p class="hv-note">예시 화면</p>
+    </div>
+  </div>
+</section>
+
+<!-- 문제 -->
+<section class="problem">
+  <div class="wrap">
+    <h2 class="big">온라인 가게는 여러 개인데,<br>사장님은 한 명입니다.</h2>
+    <ul class="pain">
+      <li><span>네이버</span>는 예전 사진 그대로.</li>
+      <li><span>당근</span>은 만들어놓고 방치.</li>
+      <li><span>인스타</span>는 뭘 올려야 할지 모르고.</li>
+      <li><span>영상</span> 만들 시간은 없습니다.</li>
+    </ul>
+    <p class="answer">그래서 딜루프가 <em>온라인 가게를 대신 관리합니다.</em></p>
+  </div>
+</section>
+
+<!-- 처음 구축 -->
+<section class="setup" id="service">
+  <div class="wrap setup-in">
+    <div class="setup-copy">
+      <p class="eyebrow">처음 한 번, 기반 구축</p>
+      <h2>가게 정보는 한 번 정리하고,<br>네 곳에 똑같이 맞춥니다.</h2>
+      <p class="body">영업시간이 네이버와 당근에서 다르게 나오면 손님은 헷갈립니다. 처음에 우리 가게 정보를 한 장으로 정리한 뒤, 네 개의 온라인 가게에 같은 내용으로 세팅합니다.</p>
+      <p class="fine">계정은 사장님 명의로 만들고, 딜루프는 가능한 경우 관리 권한으로 함께 운영합니다.</p>
+    </div>
+
+    <div class="hub" aria-label="우리 가게 정보 한 장이 네이버 스마트플레이스, 카카오맵, 당근 비즈프로필, 인스타그램에 연결되는 구조">
+      <div class="hub-src">
+        <p class="hub-title">우리 가게 정보</p>
+        <ul>
+          <li><span>영업시간</span><i></i></li>
+          <li><span>메뉴</span><i></i></li>
+          <li><span>가격</span><i></i></li>
+          <li><span>사진</span><i></i></li>
+          <li><span>소개</span><i></i></li>
+        </ul>
+      </div>
+      <div class="hub-wire" aria-hidden="true"><span></span></div>
+      <ul class="hub-out">
+        <li><span class="ch ch-n">N</span><b>네이버 스마트플레이스</b></li>
+        <li><span class="ch ch-k">K</span><b>카카오맵</b></li>
+        <li><span class="ch ch-d">당</span><b>당근 비즈프로필</b></li>
+        <li><span class="ch ch-i">◎</span><b>Instagram 비즈니스 계정</b></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- 한 번 찍고 여러 곳에 -->
+<section class="flow" id="how">
+  <div class="wrap">
+    <div class="flow-head">
+      <p class="eyebrow eyebrow-light">딜루프의 운영 방식</p>
+      <h2 class="big light">한 번 찍고,<br>여러 곳에 알립니다.</h2>
+      <p class="body light-2">채널마다 매번 새로 만들지 않습니다. 한 번 확보한 가게의 사진과 영상을 각 플랫폼에 맞게 다시 만들어 사용합니다. 그래서 적은 비용으로 매달 꾸준히 관리할 수 있습니다.</p>
+    </div>
+
+    <div class="flow-map">
+      <div class="fm-step fm-shoot">
+        <span class="fm-no">1</span>
+        <div class="fm-shot"><div class="plate"></div><span class="rec">● REC</span></div>
+        <p><b>월 1회 촬영</b>가게에서 짧게 찍습니다</p>
+      </div>
+      <div class="fm-arrow" aria-hidden="true"></div>
+      <div class="fm-step fm-core">
+        <span class="fm-no">2</span>
+        <div class="fm-core-box">
+          <span>이번 달 소재</span>
+          <b>“퇴근길 한 접시”</b>
+          <small>사진 24장 · 영상 12컷</small>
+        </div>
+        <p><b>핵심 소재 하나</b>이번 달 이야기를 정합니다</p>
+      </div>
+      <div class="fm-arrow" aria-hidden="true"></div>
+      <div class="fm-outs">
+        <div class="fo fo-reel">
+          <div class="phone phone-s"><div class="phone-screen"><div class="plate plate-sm"></div><div class="reel-ui"><span class="chip ig">Reels</span></div></div></div>
+          <p><b>대표 Reel</b>인스타그램</p>
+        </div>
+        <div class="fo">
+          <div class="fo-card"><div class="post-grid"><i></i><i class="p2"></i><i class="p3"></i><i class="p4"></i></div></div>
+          <p><b>사진 게시물</b>인스타그램</p>
+        </div>
+        <div class="fo">
+          <div class="fo-card fo-text"><span class="ch ch-n">N</span><i></i><i class="s"></i><div class="mini-img"><div class="plate plate-xs"></div></div></div>
+          <p><b>플레이스 소식</b>네이버</p>
+        </div>
+        <div class="fo">
+          <div class="fo-card fo-text"><span class="ch ch-d">당</span><i></i><i class="s"></i><div class="mini-img"><div class="plate plate-xs"></div></div></div>
+          <p><b>동네 소식</b>당근</p>
+        </div>
+        <div class="fo fo-opt">
+          <div class="fo-card fo-shorts"><span>Shorts</span></div>
+          <p><b>지역 Shorts</b>동의 시 재활용</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 매달 제공 -->
+<section class="monthly">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">매달 해드리는 일</p>
+      <h2>한 달에 이만큼,<br>빠짐없이 챙깁니다.</h2>
+    </div>
+    <ol class="mlist">
+      <li class="m-hero"><span class="mn">01</span><div><b>대표 숏폼 1편</b><p>20~60초. 인스타그램 Reel로 올립니다.</p></div></li>
+      <li><span class="mn">02</span><div><b>Instagram 사진 콘텐츠 2건</b></div></li>
+      <li><span class="mn">03</span><div><b>네이버 플레이스 소식 2건</b></div></li>
+      <li><span class="mn">04</span><div><b>당근 소식 2건</b></div></li>
+      <li><span class="mn">05</span><div><b>리뷰·댓글 답변 최대 10건</b><p>네이버·카카오·당근·인스타그램</p></div></li>
+      <li><span class="mn">06</span><div><b>온라인 정보 관리 + 월간 결과 확인</b><p>메뉴·영업시간·가격 변경 반영, 간단 성과 리포트</p></div></li>
+    </ol>
+    <p class="fine m-fine">콘텐츠 재료를 위한 간단 촬영을 월 1회 진행합니다. 블로그 관리와 가게별 유튜브 채널 운영은 기본 서비스에 포함되지 않습니다.</p>
+  </div>
+</section>
+
+<!-- 숏폼 -->
+<section class="reel">
+  <div class="wrap reel-in">
+    <div class="reel-phone">
+      <div class="phone phone-l">
+        <div class="phone-screen">
+          <div class="reel-scene">
+            <div class="plate plate-lg"></div>
+          </div>
+          <div class="reel-ui reel-ui-l">
+            <span class="chip ig">Reels</span>
+            <p>사장님이 20년째<br>지키는 국물 이야기</p>
+            <div class="reel-bar"><i></i></div>
+          </div>
+        </div>
+      </div>
+      <p class="hv-note">예시 화면</p>
+    </div>
+    <div class="reel-copy">
+      <p class="eyebrow">대표 숏폼</p>
+      <h2 class="big">매달 하나는<br>기억에 남게.</h2>
+      <p class="body">여러 개를 대충 뿌리지 않습니다. 가게에 맞는 한 편을 기획해서 20~60초 영상으로 만듭니다.</p>
+      <p class="formats">음식이 먹음직스럽게 보이는 <b>비주얼 컷</b>, 사장님의 <b>가게 이야기</b>, 우리 <b>동네 이야기</b>, 피식 웃게 되는 <b>허무개그</b>, <b>AI 동네괴담</b>, 짧은 <b>미니 다큐</b>까지 — 가게 분위기에 맞는 형식을 고릅니다.</p>
+      <p class="fine">가게 동의가 있을 때만 딜루프의 지역 Shorts 채널에서도 한 번 더 소개합니다.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 운영 시스템 -->
+<section class="system">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">운영 시스템</p>
+      <h2>감으로 관리하지 않습니다.</h2>
+      <p class="body">딜루프는 자체 운영 프로그램으로 가게마다 무엇을 했고, 어떤 사진과 영상이 있고, 숫자가 어떻게 달라졌는지 기록합니다.</p>
+    </div>
+
+    <div class="ops" aria-label="딜루프 내부 운영 프로그램 화면 구성 예시 (데모 데이터)">
+      <div class="ops-bar"><i></i><i></i><i></i><span>딜루프 운영툴 · 예시 가게 (데모)</span></div>
+      <div class="ops-body">
+        <div class="ops-pane">
+          <p class="ops-t">셋업 체크리스트</p>
+          <div class="ops-prog"><i style="width:62%"></i></div>
+          <ul class="ops-check">
+            <li class="done">네이버 플레이스 기본정보</li>
+            <li class="done">영업시간·메뉴·가격 확인</li>
+            <li class="done">대표 사진 교체</li>
+            <li>당근 비즈프로필 소개</li>
+            <li>인스타그램 프로필 정리</li>
+          </ul>
+        </div>
+        <div class="ops-pane">
+          <p class="ops-t">촬영 자산</p>
+          <div class="ops-assets">
+            <span><i class="plate plate-xs"></i><em>S01</em></span>
+            <span class="a2"><i></i><em>S02</em></span>
+            <span class="a3"><i></i><em>S03</em></span>
+            <span class="a4"><i class="plate plate-xs"></i><em>S04</em></span>
+            <span class="a5"><i></i><em>S05</em></span>
+            <span class="a6"><i></i><em>S06</em></span>
+          </div>
+          <p class="ops-sub">장면별 분류 · 화질 자동 점검</p>
+        </div>
+        <div class="ops-pane">
+          <p class="ops-t">작업 시간 기록</p>
+          <ul class="ops-bars">
+            <li><span>셋업</span><i style="width:80%"></i></li>
+            <li><span>촬영</span><i style="width:55%"></i></li>
+            <li><span>콘텐츠 작업</span><i style="width:68%"></i></li>
+            <li><span>검수</span><i style="width:24%"></i></li>
+            <li><span>게시</span><i style="width:30%"></i></li>
+          </ul>
+        </div>
+        <div class="ops-pane">
+          <p class="ops-t">성과 기록 <small>시작 기준값 대비</small></p>
+          <ul class="ops-metrics">
+            <li>플레이스 조회</li><li>길찾기</li><li>전화</li><li>저장</li><li>인스타 도달</li><li>릴스 조회</li>
+          </ul>
+          <p class="ops-sub">매달 같은 항목을 같은 방식으로 기록합니다</p>
+        </div>
+      </div>
+    </div>
+    <p class="fine center">실제 운영 프로그램의 화면 구성을 옮긴 예시입니다. 표시된 내용은 데모이며 실제 고객 정보가 아닙니다.</p>
+  </div>
+</section>
+
+<!-- 이용 과정 -->
+<section class="steps">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">이용 과정</p>
+      <h2>시작은 상담 한 번이면 됩니다.</h2>
+    </div>
+    <ol class="step-list">
+      <li><span>01</span>상담 예약</li>
+      <li><span>02</span>온라인 매장 확인</li>
+      <li><span>03</span>기본 채널 구축</li>
+      <li><span>04</span>사진·영상 확보</li>
+      <li><span>05</span>매달 콘텐츠 운영</li>
+      <li><span>06</span>결과 확인</li>
+    </ol>
+  </div>
+</section>
+
+<!-- 가격 -->
+<section class="price" id="price">
+  <div class="wrap price-in">
+    <div class="price-copy">
+      <p class="eyebrow">가격</p>
+      <h2 class="big">서비스는 하나입니다.<br>결제기간만 선택하세요.</h2>
+      <p class="body">6개월·12개월은 같은 서비스를 미리 결제하고 할인받는 방식입니다. 내용은 똑같습니다.</p>
+      <a href="#book" class="btn btn-accent">상담 예약하기</a>
+    </div>
+    <div class="price-table" role="table" aria-label="결제기간별 가격">
+      <div class="pt-row pt-main" role="row">
+        <div class="pt-k" role="cell"><b>월간</b><span>약정 없음</span></div>
+        <div class="pt-v" role="cell">
+          <p><small>초기 구축</small>99,000원</p>
+          <p class="plus">+</p>
+          <p><small>월 관리</small>69,900원<em>/월</em></p>
+        </div>
+      </div>
+      <div class="pt-row" role="row">
+        <div class="pt-k" role="cell"><b>6개월 선결제</b><span>초기 구축 포함</span></div>
+        <div class="pt-v" role="cell"><p class="one">469,000원</p><span class="save">월간 대비 49,400원 절약</span></div>
+      </div>
+      <div class="pt-row" role="row">
+        <div class="pt-k" role="cell"><b>12개월 선결제</b><span>초기 구축 포함</span></div>
+        <div class="pt-v" role="cell"><p class="one">769,000원</p><span class="save">월간 대비 168,800원 절약</span></div>
+      </div>
+      <p class="pt-foot">모든 가격 VAT 포함 · 광고비는 별도이며 기본 서비스에 포함되지 않습니다</p>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq" id="faq">
+  <div class="wrap faq-in">
+    <h2>자주 묻는 질문</h2>
+    <div class="faq-list">
+      <details>
+        <summary>제가 직접 뭘 해야 하나요?</summary>
+        <p>기본정보와 메뉴 변경사항 정도만 알려주시면 됩니다. 콘텐츠 원재료는 한 달에 한 번 간단한 촬영으로 확보합니다.</p>
+      </details>
+      <details>
+        <summary>계정은 누구 소유인가요?</summary>
+        <p>사장님 명의의 계정을 기본으로 합니다. 딜루프는 가능한 경우 플랫폼이 제공하는 관리 권한으로 운영합니다.</p>
+      </details>
+      <details>
+        <summary>매출이 오르는 것을 보장하나요?</summary>
+        <p>보장하지 않습니다. 대신 조회, 길찾기, 프로필 방문, 콘텐츠 반응처럼 확인 가능한 숫자를 매달 보여드립니다.</p>
+      </details>
+      <details>
+        <summary>블로그도 해주나요?</summary>
+        <p>현재 기본 관리 상품에는 포함하지 않습니다.</p>
+      </details>
+      <details>
+        <summary>광고비가 별도로 드나요?</summary>
+        <p>광고 집행은 기본 서비스에 포함하지 않습니다.</p>
+      </details>
+      <details>
+        <summary>월간으로 쓰다가 그만둘 수 있나요?</summary>
+        <p>월간 이용은 장기 약정이 없습니다. 선결제 상품의 해지·환불 기준은 상담과 계약 단계에서 문서로 안내드립니다.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- 예약 -->
+<section class="book" id="book">
+  <div class="wrap book-in">
+    <div class="book-copy">
+      <p class="eyebrow">서비스 상담 예약</p>
+      <h2 class="big">우리 가게도<br>한번 맡겨볼까요?</h2>
+      <p class="body">남겨주신 번호로 희망하신 날짜·시간대에 맞춰 연락드립니다. 상담은 무료이며, 상담 후 바로 계약하지 않으셔도 됩니다.</p>
+    </div>
+
+    <div class="book-card">
+      <form name="booking" method="POST" action="/thanks.html" data-netlify="true" netlify-honeypot="company_website" id="booking" novalidate>
+        <input type="hidden" name="form-name" value="booking">
+        <p class="hp"><label>이 칸은 비워두세요 <input name="company_website" tabindex="-1" autocomplete="off"></label></p>
+
+        <div class="f-grid">
+          <label class="f"><span>이름 <em>*</em></span><input name="name" required autocomplete="name" maxlength="40"></label>
+          <label class="f"><span>상호명 <em>*</em></span><input name="shop" required autocomplete="organization" maxlength="60"></label>
+          <label class="f"><span>휴대폰 번호 <em>*</em></span><input name="phone" type="tel" inputmode="numeric" required autocomplete="tel" placeholder="010-0000-0000" maxlength="13"></label>
+          <label class="f"><span>업종 <em>*</em></span>
+            <select name="industry" required>
+              <option value="">선택해주세요</option>
+              <option>식당</option><option>실내포차·주점</option><option>카페·베이커리</option>
+              <option>미용실</option><option>네일·뷰티</option><option>휴대폰 매장</option>
+              <option>정육점·식료품</option><option>세탁소</option><option>학원·교습소</option>
+              <option>1인 서비스업</option><option>기타</option>
+            </select>
+          </label>
+          <label class="f f-wide"><span>사업장 지역 <em>*</em></span><input name="region" required maxlength="60" placeholder="예: 천안시 동남구 문화동"></label>
+        </div>
+
+        <fieldset class="f f-wide">
+          <legend>현재 운영 중인 온라인 채널</legend>
+          <div class="checks">
+            <label><input type="checkbox" name="channels" value="네이버"><span>네이버</span></label>
+            <label><input type="checkbox" name="channels" value="카카오"><span>카카오</span></label>
+            <label><input type="checkbox" name="channels" value="당근"><span>당근</span></label>
+            <label><input type="checkbox" name="channels" value="Instagram"><span>Instagram</span></label>
+            <label><input type="checkbox" name="channels" value="없음" data-none><span>없음</span></label>
+          </div>
+        </fieldset>
+
+        <div class="f-grid">
+          <label class="f f-wide"><span>가장 필요한 도움 <em>*</em></span>
+            <select name="need" required>
+              <option value="">선택해주세요</option>
+              <option>네이버·카카오 등 기본 정보 정리</option>
+              <option>인스타그램 운영</option>
+              <option>숏폼 영상 제작</option>
+              <option>리뷰·댓글 관리</option>
+              <option>전체적으로 맡기고 싶어요</option>
+              <option>아직 잘 모르겠어요</option>
+            </select>
+          </label>
+          <label class="f"><span>희망 상담 날짜 <em>*</em></span><input name="date" type="date" required></label>
+          <label class="f"><span>희망 시간대 <em>*</em></span>
+            <select name="time" required>
+              <option value="">선택해주세요</option>
+              <option>오전 (10~12시)</option>
+              <option>점심 이후 (12~15시)</option>
+              <option>오후 (15~18시)</option>
+              <option>저녁 (18시 이후)</option>
+            </select>
+          </label>
+          <label class="f f-wide"><span>기타 문의</span><textarea name="message" rows="3" maxlength="1000" placeholder="궁금한 점이 있으면 편하게 적어주세요"></textarea></label>
+        </div>
+
+        <div class="consent">
+          <label class="c-check"><input type="checkbox" name="privacy_consent" value="동의함" required><span><b>개인정보 수집·이용에 동의합니다</b> <em>*</em></span></label>
+          <p>수집 항목: 이름, 상호명, 휴대폰 번호, 업종, 사업장 지역, 운영 채널, 문의 내용 · 목적: 서비스 상담 연락 · 보유 기간: 상담 종료 후 6개월 (계약 시 계약 종료까지). 동의하지 않으실 수 있으며, 이 경우 온라인 상담 예약이 어렵습니다. <a href="privacy.html" target="_blank" rel="noopener">개인정보처리방침</a></p>
+        </div>
+
+        <p class="f-error" role="alert" hidden></p>
+        <button type="submit" class="btn btn-accent btn-block">상담 예약하기</button>
+      </form>
+
+      <div class="done" hidden tabindex="-1">
+        <span class="done-mark" aria-hidden="true">✓</span>
+        <h3>예약이 접수되었습니다.</h3>
+        <p>확인 후 연락드리겠습니다.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap foot-in">
+    <div>
+      <p class="logo logo-foot"><span class="logo-mark" aria-hidden="true"></span><span class="logo-ko">딜루프랩스</span></p>
+      <p class="foot-sub">소상공인 온라인 매장 관리</p>
+    </div>
+    <dl class="biz">
+      <div><dt>상호</dt><dd>딜루프 랩스</dd></div>
+      <div><dt>대표자</dt><dd>김시준</dd></div>
+      <div><dt>사업자등록번호</dt><dd>799-18-02516</dd></div>
+      <div><dt>사업장 소재지</dt><dd>충청남도 천안시 동남구 문화1길 24-12, 101호</dd></div>
+      <div><dt>전화</dt><dd><a href="tel:01027415806">010-2741-5806</a></dd></div>
+      <div><dt>이메일</dt><dd><a href="mailto:ruin3196@naver.com">ruin3196@naver.com</a></dd></div>
+    </dl>
+    <p class="foot-links"><a href="privacy.html"><b>개인정보처리방침</b></a><span>© 2026 딜루프랩스</span></p>
+  </div>
+</footer>
+
+<a href="#book" class="m-cta btn btn-accent" aria-hidden="true" tabindex="-1">상담 예약하기</a>
+
+<script src="app.js" defer></script>
+</body>
+</html>
