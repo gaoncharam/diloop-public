@@ -3,7 +3,7 @@
   var ENDPOINT = 'https://script.google.com/macros/s/AKfycbxEhGZUzBSJSNSG7AqHhouqjbGfE7z_zrPrM2HhBi6ZiKzgf43ttypkzDx8NIKMBXE_7Q/exec';
   var form = document.getElementById('booking');
   if (!form) return;
-  var done = document.querySelector('.done');
+  var done = document.querySelector('.book-card .done');
   var errBox = form.querySelector('.f-error');
   var btn = form.querySelector('button[type=submit]');
 
