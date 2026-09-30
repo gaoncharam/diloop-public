@@ -1,4 +1,6 @@
 (function () {
+  // 예약 저장소: Google 스프레드시트 (Apps Script 웹앱 — apps-script/Code.gs)
+  var ENDPOINT = '__ENDPOINT__';
   var form = document.getElementById('booking');
   if (!form) return;
   var done = document.querySelector('.done');
@@ -67,10 +69,11 @@
     e.preventDefault();
     if (!validate()) return;
     btn.disabled = true; btn.textContent = '접수 중…';
-    var body = new URLSearchParams(new FormData(form)).toString();
-    fetch('/', { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body: body })
-      .then(function (r) {
-        if (!r.ok) throw new Error(r.status);
+    var fd = new FormData(form);
+    fd.append('source', location.hostname);
+    // Apps Script 는 CORS 응답을 주지 않는다 → no-cors 로 보내고, 네트워크 오류만 실패로 본다
+    fetch(ENDPOINT, { method: 'POST', mode: 'no-cors', body: new URLSearchParams(fd) })
+      .then(function () {
         form.hidden = true; done.hidden = false; done.focus();
       })
       .catch(function () {
