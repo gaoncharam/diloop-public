@@ -69,6 +69,11 @@
     e.preventDefault();
     if (!validate()) return;
     btn.disabled = true; btn.textContent = '접수 중…';
+    if (ENDPOINT.indexOf('https://script.google.com/') !== 0) {
+      btn.disabled = false; btn.textContent = '상담 예약하기';
+      errBox.textContent = '온라인 예약 준비 중입니다. 010-2741-5806 또는 ruin3196@naver.com 으로 연락주세요.';
+      errBox.hidden = false; return;
+    }
     var fd = new FormData(form);
     fd.append('source', location.hostname);
     // Apps Script 는 CORS 응답을 주지 않는다 → no-cors 로 보내고, 네트워크 오류만 실패로 본다
