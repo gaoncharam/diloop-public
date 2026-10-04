@@ -1,2 +1,6 @@
 .netlify
 .DS_Store
+
+review/
+
+assets/sources.json
