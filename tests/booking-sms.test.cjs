@@ -1,0 +1,22 @@
+const assert = require('node:assert/strict');
+const fs = require('node:fs');
+const vm = require('node:vm');
+const crypto = require('node:crypto');
+const code = fs.readFileSync('apps-script/Code.gs','utf8');
+function fixture(config={},response={status:200,body:{messageList:[{statusCode:'2000'}],groupInfo:{groupId:'mock-group'}}}) {
+  const calls=[], sheets={};
+  function sheet(name){return sheets[name] ||= {rows:[],getLastRow(){return this.rows.length},appendRow(row){this.rows.push(row);calls.push('save:'+name)},setFrozenRows(){},getRange(){return{setNumberFormat(){return this},setValue(){return this}}},hideSheet(){}}}
+  const ss={getSheetByName(name){return sheets[name]},insertSheet:sheet};
+  const context={console:{error(){calls.push('safe-error')},log(){}},Date,PropertiesService:{getScriptProperties(){return{getProperties(){return config}}}},SpreadsheetApp:{getActiveSpreadsheet(){return ss},flush(){calls.push('flush')}},LockService:{getScriptLock(){return{waitLock(){},releaseLock(){}}}},Utilities:{getUuid(){return'00000000-0000-0000-0000-000000000001'},formatDate(){return'10/06 16:00'},computeHmacSha256Signature(text,key){return Array.from(crypto.createHmac('sha256',key).update(text).digest()).map(x=>x>127?x-256:x)}},UrlFetchApp:{fetch(url,opts){calls.push({url,opts});if(response.throw)throw Error('network');return{getResponseCode(){return response.status},getContentText(){return JSON.stringify(response.body)}}}},ContentService:{createTextOutput(text){return text}}};
+  vm.createContext(context);vm.runInContext(code,context);return{context,calls,sheets};
+}
+const cfg={OWNER_SMS_ENABLED:'true',SOLAPI_API_KEY:'fake-key',SOLAPI_API_SECRET:'fake-secret',SOLAPI_SENDER:'010-0000-0000'};
+const valid={parameter:{name:'테스트',shop:'테스트 가게',phone:'01000000000',industry:'식당',region:'테스트',privacy_consent:'동의함',date:'2026-10-07',time:'오후',source:'diloop.kr',message:'고객 문의가 문자에 노출되면 안 됩니다'},parameters:{channels:['네이버','당근']}};
+const pass=[];
+let f=fixture(cfg);assert.equal(f.context.doPost(valid),'ok');assert.equal(f.sheets['예약'].rows.length,2);assert.equal(f.sheets['예약'].rows[1].length,14);assert.equal(f.sheets['예약'].rows[1][6],'네이버, 당근');const request=f.calls.find(x=>typeof x==='object');assert(f.calls.indexOf('flush')<f.calls.indexOf(request));const payload=JSON.parse(request.opts.payload);assert.equal(payload.messages[0].to,'01027415806');assert(!payload.messages[0].text.includes('테스트'));assert(!payload.messages[0].text.includes('고객 문의'));assert.equal(payload.messages[0].type,'SMS');const bytes=Array.from(payload.messages[0].text).reduce((n,ch)=>n+(ch.charCodeAt(0)>127?2:1),0);assert(bytes<=90);const auth=request.opts.headers.Authorization;const date=auth.match(/date=([^,]+)/)[1],salt=auth.match(/salt=([^,]+)/)[1],sig=auth.match(/signature=(.*)/)[1];assert.equal(sig,crypto.createHmac('sha256','fake-secret').update(date+salt).digest('hex'));assert.equal(f.sheets['문자알림 로그'].rows[1][2],'발송 접수');pass.push('saved/flushed before sending; original 14 columns; owner-only SMS <=90 bytes; HMAC; no customer data');
+for(const event of [{parameter:{...valid.parameter,company_website:'spam'}},{parameter:{...valid.parameter,privacy_consent:''}}]){f=fixture(cfg);assert.equal(f.context.doPost(event),'ok');assert.equal(f.calls.length,0)}pass.push('honeypot and unconsented submission never send');
+for(const [res,status]of [[{status:401,body:{}},'발송 거절 (401)'],[{status:503,body:{}},'결과 미확인 (503)'],[{throw:true},'결과 미확인'],[{status:200,body:{failedMessageList:[{statusCode:'4000'}]}},'발송 거절'],[{status:200,body:{}},'결과 미확인']]){f=fixture(cfg,res);assert.equal(f.context.doPost(valid),'ok');assert.equal(f.sheets['예약'].rows.length,2);assert.equal(f.sheets['문자알림 로그'].rows[1][2],status);assert.equal(f.calls.filter(x=>typeof x==='object').length,1)}pass.push('failed/unknown notification preserves reservation; no automatic resend');
+f=fixture({});f.context.doPost(valid);assert(!f.calls.some(x=>typeof x==='object'));assert.equal(f.sheets['예약'].rows.length,2);pass.push('disabled notifications preserve booking');
+f=fixture({...cfg,SOLAPI_API_SECRET:''});f.context.doPost(valid);assert(!f.calls.some(x=>typeof x==='object'));pass.push('missing credentials never send');
+f=fixture(cfg);f.context.testOwnerSms();assert.equal(f.sheets['예약'],undefined);assert.equal(f.calls.filter(x=>typeof x==='object').length,1);pass.push('test notification creates no fake reservation');
+console.log(JSON.stringify({passed:pass,smsBytes:bytes},null,2));
