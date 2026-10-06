@@ -363,4 +363,15 @@ h2{font-size:34px}
 *,*:before,*:after{animation:none!important;transition:none!important}
 .reel-piece{position:static}
 }
-
+@media(min-width:701px) and (max-height:780px){
+.hero-copy{padding-top:24px;padding-bottom:24px}
+.hero-brand{font-size:64px;margin-bottom:20px}
+.hero-brand span{font-size:16px;margin-top:8px}
+.hero h1{font-size:32px;margin-bottom:18px}
+.hero .lead{font-size:18px;line-height:1.7}
+.hero-price{margin:16px 0;font-size:18px}
+.hero-price b{font-size:23px}
+.hero-price small{margin-top:5px}
+.hero-film{padding-top:16px;padding-bottom:16px}
+.hero-film video{max-height:calc(100svh - 220px)}
+}
