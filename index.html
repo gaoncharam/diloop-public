@@ -12,30 +12,31 @@
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="preload" href="assets/maruburi-bold.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/suit-variable.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="styles.css?v=8">
+<link rel="stylesheet" href="styles.css?v=9">
 </head>
 <body>
 <a class="skip-link" href="#main">본문으로 건너뛰기</a>
-<header class="top over-photo">
+<header class="top">
   <div class="wrap top-in">
     <a href="#" class="logo" aria-label="딜루프랩스 홈"><span class="wordmark">딜루프</span><span class="logo-ko">DILOOP LABS</span></a>
     <nav class="nav" aria-label="주요 메뉴"><a href="#service">하는 일</a><a href="#how">콘텐츠</a><a href="#price">가격</a></nav>
-    <a href="#book" class="header-cta">내 가게 맡겨보기 <span aria-hidden="true">↗</span></a>
+    <a href="#book" class="header-cta">무료 상담 신청 <span aria-hidden="true">↗</span></a>
   </div>
 </header>
 <main id="main">
 <section class="hero" aria-labelledby="hero-title">
-  <figure class="hero-photo"><img src="assets/hero-craft.webp" width="2000" height="3000" alt="바리스타가 손으로 우유를 부어 한 잔의 커피를 완성하는 모습" fetchpriority="high"></figure>
   <div class="hero-in">
     <div class="hero-copy">
-      <p class="hero-brand">딜루프<span>DILOOP LABS</span></p>
-      <p class="eyebrow">동네 가게의 온라인 일을 챙기는 스튜디오</p>
-      <h1 id="hero-title">어려워서 미뤘던 가게 홍보,<br>이제 부담 없이 시작하세요.</h1>
-      <div class="hero-bottom"><p class="lead">어디서부터 해야 할지 몰라도, 챙길 시간이 없어도 괜찮습니다.<br>가게 정보부터 숏폼, 게시물과 리뷰 답변까지 딜루프가 챙깁니다.</p>
-      <p class="hero-price">시작 <b>99,000원</b> · 이후 월 <b>69,900원</b><small>VAT 포함 · 월 단위 이용</small></p>
-      <a href="#book" class="btn btn-accent">내 가게 맡겨보기 <span aria-hidden="true">↗</span></a></div>
+      <p class="hero-brand">딜루프<span>가게의 온라인 일을 챙깁니다.</span></p>
+      <h1 id="hero-title">장사하기도 바쁜데<br>홍보까지 언제 합니까.</h1>
+      <p class="lead">온라인 홍보, 어려워서 미뤄두셨나요?<br>가게 정보부터 영상·게시물·리뷰 답변까지.<br>이제 부담 없이 맡기세요.</p>
+      <p class="hero-price">시작 <b>99,000원</b><br>이후 월 <b>69,900원</b><small>VAT 포함 · 월 단위 이용</small></p>
+      <a href="#book" class="btn btn-accent">무료 상담 신청 <span aria-hidden="true">↗</span></a>
     </div>
-    <a href="#service" class="hero-scroll" aria-label="딜루프가 하는 일 보기">하는 일 <span aria-hidden="true">↓</span></a>
+    <div class="hero-film">
+      <video id="brand-film" width="720" height="1280" poster="assets/diloop-film-poster.jpg" autoplay muted loop playsinline controls preload="metadata" aria-label="딜루프 홍보영상: 동네 가게의 홍보를 만드는 이야기"><source src="assets/diloop-film.mp4" type="video/mp4">영상은 <a href="assets/diloop-film.mp4">여기에서 보실 수 있습니다.</a></video>
+      <div class="film-caption"><span>딜루프를 소개합니다 · 38초</span><div class="film-actions"><button type="button" id="film-sound" hidden>소리 켜고 처음부터 보기 ↗</button><button type="button" id="film-toggle" hidden>영상 멈추기</button></div></div>
+    </div>
   </div>
 </section>
 <section class="roles wrap" id="service" aria-labelledby="roles-title">
@@ -50,10 +51,10 @@
   <div class="wrap">
     <div class="story-heading"><p class="eyebrow">한 번의 촬영, 여러 곳의 이야기</p><h2 id="content-title">한 번 잘 찍어서,<br>여러 번 제대로 씁니다.</h2><p class="story-intro">담백한 메뉴 소개부터 뜻밖의 동네 이야기까지.<br>가게에 맞는 숏폼을 만들고, 채널마다 다르게 씁니다.</p></div>
     <div class="editorial">
-      <figure class="reel-piece"><div class="reel-cover"><img src="assets/coffee-work.webp" alt="커피를 따르는 세로 영상의 커버 편집 예시" width="1800" height="2700" loading="lazy"><p>오늘도,<br>한 잔에 진심.</p><span class="cover-meta">가게의 손길을 담은 한 편</span></div><figcaption><b>Instagram Reel</b><span>대표 숏폼 20–60초 · 영상 커버 편집 예시</span></figcaption></figure>
-      <figure class="place-piece"><img src="assets/coffee-detail.webp" width="900" height="600" alt="커피를 따르는 장면을 가로로 편집한 네이버 소식용 사진" loading="lazy"><figcaption><span class="channel-label">네이버 플레이스 소식</span><b>한 잔을 내리는 시간.</b><p>가게의 일상과 대표 메뉴를 소식으로 전합니다.</p></figcaption></figure>
-      <figure class="carrot-piece"><figcaption><span class="channel-label">당근 소식</span><b>이웃님,<br>커피 한 잔 하고 가세요.</b><p>같은 장면도 동네 이웃에게는 더 가깝게.</p></figcaption><img src="assets/coffee-square.webp" width="800" height="800" alt="컵과 커피가 중심이 되도록 편집한 당근 소식용 사진" loading="lazy"></figure>
-      <figure class="instagram-piece"><img src="assets/coffee-square.webp" width="800" height="800" alt="오늘의 커피를 담은 인스타그램 사진 콘텐츠 편집 예시" loading="lazy"><figcaption><b>Instagram 사진</b><span>좋은 순간은 사진으로도 남깁니다.</span></figcaption></figure>
+      <figure class="reel-piece"><div class="reel-cover"><img src="assets/coffee-work.webp" alt="커피를 따르는 세로 영상의 커버 편집 예시" width="1800" height="2700"><p>오늘도,<br>한 잔에 진심.</p><span class="cover-meta">가게의 손길을 담은 한 편</span></div><figcaption><b>Instagram Reel</b><span>대표 숏폼 20–60초 · 영상 커버 편집 예시</span></figcaption></figure>
+      <figure class="place-piece"><img src="assets/coffee-detail.webp" width="900" height="600" alt="커피를 따르는 장면을 가로로 편집한 네이버 소식용 사진"><figcaption><span class="channel-label">네이버 플레이스 소식</span><b>한 잔을 내리는 시간.</b><p>가게의 일상과 대표 메뉴를 소식으로 전합니다.</p></figcaption></figure>
+      <figure class="carrot-piece"><figcaption><span class="channel-label">당근 소식</span><b>이웃님,<br>커피 한 잔 하고 가세요.</b><p>같은 장면도 동네 이웃에게는 더 가깝게.</p></figcaption><img src="assets/coffee-square.webp" width="800" height="800" alt="컵과 커피가 중심이 되도록 편집한 당근 소식용 사진"></figure>
+      <figure class="instagram-piece"><img src="assets/coffee-square.webp" width="800" height="800" alt="오늘의 커피를 담은 인스타그램 사진 콘텐츠 편집 예시"><figcaption><b>Instagram 사진</b><span>좋은 순간은 사진으로도 남깁니다.</span></figcaption></figure>
       <p class="editorial-note">하나의 소재, 서로 다른 쓰임.<br><span>실제 사진을 활용한 편집 예시이며 고객 운영 사례가 아닙니다.</span></p>
     </div>
     <details class="scope-note"><summary>숏폼은 가게 분위기에 맞춰 만듭니다</summary><p>비주얼 컷, 사장님의 가게 이야기, 동네 이야기, 허무개그, AI 동네괴담, 미니 다큐 등 가게에 맞는 형식을 고릅니다. 가게 동의가 있을 때만 딜루프의 지역 Shorts 채널에서도 한 번 더 소개합니다.</p></details>
@@ -67,7 +68,7 @@
 </div></section>
 <section class="operations wrap" aria-labelledby="operations-title">
   <div class="ops-heading"><p class="eyebrow">실제 내부 운영 프로그램</p><h2 id="operations-title">보이지 않는 곳에서는<br>이렇게 챙깁니다.</h2><p>가게 정보부터 촬영 자료, 작업 시간, 성과 기록까지.<br>자체 운영 프로그램에 남기고 확인합니다.</p></div>
-  <figure class="ops-figure"><a href="assets/operations.webp" target="_blank" rel="noopener" aria-label="실제 운영 화면 크게 보기, 새 창"><img src="assets/operations.webp" width="1440" height="940" alt="딜루프 실제 내부 운영 프로그램의 셋업 체크리스트. 개인정보 없는 예시 카페로 실행한 화면." loading="lazy"></a><figcaption><span>실제 프로그램 · 셋업 체크리스트</span><span>개인정보 없는 별도 샘플 데이터 · 화면을 누르면 크게 볼 수 있습니다 ↗</span></figcaption></figure>
+  <figure class="ops-figure"><a href="assets/operations.webp" target="_blank" rel="noopener" aria-label="실제 운영 화면 크게 보기, 새 창"><img src="assets/operations.webp" width="1440" height="940" alt="딜루프 실제 내부 운영 프로그램의 셋업 체크리스트. 개인정보 없는 예시 카페로 실행한 화면."></a><figcaption><span>실제 프로그램 · 셋업 체크리스트</span><span>개인정보 없는 별도 샘플 데이터 · 화면을 누르면 크게 볼 수 있습니다 ↗</span></figcaption></figure>
 </section>
 <section class="price-reservation" id="price" aria-labelledby="price-title">
   <div class="value-intro"><div class="wrap">
@@ -113,12 +114,12 @@
       </div>
       <p class="pt-foot">모든 가격 VAT 포함 · 광고비는 별도이며 기본 서비스에 포함되지 않습니다</p>
     </div>
-  <div class="booking-block" id="book"><div class="book-in"><div class="book-copy"><p class="eyebrow">어디서 시작할지, 함께 이야기해요</p><h2>우리 가게도<br>한번 맡겨볼까요?</h2><p class="body">남겨주신 번호로 희망하신 날짜·시간대에 맞춰 연락드립니다. 상담은 무료이며, 상담 후 바로 계약하지 않으셔도 됩니다.</p><p class="book-contact">직접 이야기하고 싶으시면<br><a href="tel:01027415806">010-2741-5806 ↗</a></p></div>
-    <div class="book-card">
+  <div class="booking-block" id="book"><div class="book-in"><div class="book-copy"><p class="eyebrow">어디서 시작할지, 함께 이야기해요</p><h2>가게 홍보,<br>일단 이야기해요.</h2><p class="body">아래에 가게 정보와 연락처를 남겨주세요. 원하신 날짜·시간대에 전화드립니다. 상담은 무료이며, 바로 계약하지 않으셔도 됩니다.</p><p class="book-contact">직접 이야기하고 싶으시면<br><a href="tel:01027415806">010-2741-5806 ↗</a></p></div>
+    <div class="book-card"><p class="form-intro">상담 신청서 <span><em>*</em> 표시는 꼭 입력해주세요.</span></p>
       <form name="booking" id="booking" novalidate>
         <p class="hp"><label>이 칸은 비워두세요 <input name="company_website" tabindex="-1" autocomplete="off"></label></p>
 
-        <div class="f-grid">
+        <fieldset class="form-group"><legend>가게를 알려주세요</legend><div class="f-grid">
           <label class="f"><span>이름 <em>*</em></span><input name="name" required autocomplete="name" maxlength="40"></label>
           <label class="f"><span>상호명 <em>*</em></span><input name="shop" required autocomplete="organization" maxlength="60"></label>
           <label class="f"><span>휴대폰 번호 <em>*</em></span><input name="phone" type="tel" inputmode="numeric" required autocomplete="tel" placeholder="010-0000-0000" maxlength="13"></label>
@@ -134,13 +135,15 @@
           <label class="f f-wide"><span>사업장 지역 <em>*</em></span><input name="region" required maxlength="60" placeholder="예: 천안시 동남구 문화동"></label>
         </div>
 
+        </fieldset>
+        <fieldset class="form-group"><legend>어떤 도움이 필요하세요?</legend>
         <fieldset class="f f-wide">
-          <legend>현재 운영 중인 온라인 채널</legend>
+          <legend>현재 운영 중인 온라인 채널 <span class="optional">선택 · 여러 개 가능</span></legend>
           <div class="checks">
             <label><input type="checkbox" name="channels" value="네이버"><span>네이버</span></label>
             <label><input type="checkbox" name="channels" value="카카오"><span>카카오</span></label>
             <label><input type="checkbox" name="channels" value="당근"><span>당근</span></label>
-            <label><input type="checkbox" name="channels" value="Instagram"><span>Instagram</span></label>
+            <label><input type="checkbox" name="channels" value="Instagram"><span>인스타그램</span></label>
             <label><input type="checkbox" name="channels" value="없음" data-none><span>없음</span></label>
           </div>
         </fieldset>
@@ -157,6 +160,8 @@
               <option>아직 잘 모르겠어요</option>
             </select>
           </label>
+        </div></fieldset>
+        <fieldset class="form-group"><legend>연락받을 시간을 골라주세요</legend><div class="f-grid">
           <label class="f"><span>희망 상담 날짜 <em>*</em></span><input name="date" type="date" required></label>
           <label class="f"><span>희망 시간대 <em>*</em></span>
             <select name="time" required>
@@ -170,6 +175,7 @@
           <label class="f f-wide"><span>기타 문의</span><textarea name="message" rows="3" maxlength="1000" placeholder="궁금한 점이 있으면 편하게 적어주세요"></textarea></label>
         </div>
 
+        </fieldset>
         <div class="consent">
           <label class="c-check"><input type="checkbox" name="privacy_consent" value="동의함" required><span><b>개인정보 수집·이용에 동의합니다</b> <em>*</em></span></label>
           <p>수집 항목: 이름, 상호명, 휴대폰 번호, 업종, 사업장 지역, 운영 채널, 문의 내용 · 목적: 서비스 상담 연락 · 보유 기간: 상담 종료 후 6개월 (계약 시 계약 종료까지). 동의하지 않으실 수 있으며, 이 경우 온라인 상담 예약이 어렵습니다. <a href="privacy.html" target="_blank" rel="noopener">개인정보처리방침</a></p>
@@ -218,6 +224,7 @@
     <div>
       <p class="footer-wordmark">딜루프</p>
       <p class="foot-sub">소상공인 온라인 매장 관리</p>
+      <a class="youtube-link" href="https://www.youtube.com/@근데여기" target="_blank" rel="noopener">유튜브에서 제작 영상 보기 ↗</a>
     </div>
     <dl class="biz">
       <div><dt>상호</dt><dd>딜루프 랩스</dd></div>
@@ -234,6 +241,6 @@
 <a href="#book" class="m-cta btn btn-accent" aria-hidden="true" tabindex="-1">상담 예약하기</a>
 
 <script src="app.js?v=5" defer></script>
-<script src="design.js?v=1" defer></script>
+<script src="design.js?v=2" defer></script>
 </body>
 </html>
