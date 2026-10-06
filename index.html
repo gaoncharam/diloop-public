@@ -10,34 +10,36 @@
 <meta property="og:type" content="website">
 <meta name="theme-color" content="#171b18">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
-<link rel="preload" href="assets/maruburi-bold.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/gmarket-sans-bold.woff" as="font" type="font/woff" crossorigin>
 <link rel="preload" href="assets/suit-variable.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="styles.css?v=10">
+<link rel="stylesheet" href="styles.css?v=14">
 </head>
 <body>
 <a class="skip-link" href="#main">본문으로 건너뛰기</a>
 <header class="top">
   <div class="wrap top-in">
-    <a href="#" class="logo" aria-label="딜루프랩스 홈"><span class="wordmark">딜루프</span><span class="logo-ko">DILOOP LABS</span></a>
+    <a href="#" class="logo" aria-label="딜루프랩스 홈"><img class="logo-mark" src="assets/diloop-wordmark.svg" width="285" height="65" alt="DILOOP"><span class="logo-signature"><b>딜루프</b><i>labs</i></span></a>
     <nav class="nav" aria-label="주요 메뉴"><a href="#service">하는 일</a><a href="#how">콘텐츠</a><a href="#price">가격</a></nav>
     <a href="#book" class="header-cta">무료 상담 신청 <span aria-hidden="true">↗</span></a>
   </div>
 </header>
 <main id="main">
 <section class="hero" aria-labelledby="hero-title">
+  <div class="hero-aurora" aria-hidden="true"><span></span><span></span></div>
   <div class="hero-in">
     <div class="hero-copy">
-      <p class="hero-brand">딜루프<span>가게의 온라인 일을 챙깁니다.</span></p>
-      <h1 id="hero-title">장사하기도 바쁜데<br>홍보까지 언제 합니까.</h1>
-      <p class="lead">온라인 홍보, 어려워서 미뤄두셨나요?<br>가게 정보부터 영상·게시물·리뷰 답변까지.<br>이제 부담 없이 맡기세요.</p>
-      <p class="hero-price">시작 <b>99,000원</b><br>이후 월 <b>69,900원</b><small>VAT 포함 · 월 단위 이용</small></p>
-      <a href="#book" class="btn btn-accent">무료 상담 신청 <span aria-hidden="true">↗</span></a>
+      <p class="hero-brand">딜루프 <span>소상공인 온라인 매장 관리</span></p>
+      <h1 id="hero-title"><span class="hero-prelude">장사하기도 바쁜데</span><span class="headline-line"><span>홍보까지 언제 합니까.</span></span></h1>
+      <p class="lead">온라인 홍보, 어려워서 미뤄두셨나요?<br>네이버·카카오·당근·인스타.<br>가게 정보부터 영상·게시물·리뷰 답변까지 챙깁니다.</p>
+      <p class="hero-price"><span>초기 구축 <b>99,000원</b></span><span>이후 월 <b>69,900원</b></span><small>VAT 포함 · 월 단위 이용</small></p>
+      <div class="hero-ctas"><a href="#book" class="btn btn-accent">무료 상담 신청 <span aria-hidden="true">→</span></a><a href="#service" class="btn btn-outline">하는 일 보기</a></div>
     </div>
     <div class="hero-film">
       <video id="brand-film" width="720" height="1280" poster="assets/diloop-film-poster.jpg" autoplay muted loop playsinline controls preload="metadata" aria-label="딜루프 홍보영상: 동네 가게의 홍보를 만드는 이야기"><source src="assets/diloop-film.mp4" type="video/mp4">영상은 <a href="assets/diloop-film.mp4">여기에서 보실 수 있습니다.</a></video>
-      <div class="film-caption"><span>딜루프를 소개합니다 · 38초</span><div class="film-actions"><button type="button" id="film-sound" hidden>소리 켜고 처음부터 보기 ↗</button><button type="button" id="film-toggle" hidden>영상 멈추기</button></div></div>
+      <div class="film-caption"><span>딜루프를 소개합니다 · 38초</span><div class="film-actions"><button type="button" id="film-sound" hidden>소리 켜고 처음부터 보기 ↗</button><button type="button" id="film-toggle" hidden>영상 멈추기</button><button type="button" id="page-motion" hidden aria-pressed="false">화면 움직임 멈추기</button></div></div>
     </div>
   </div>
+  <div class="hero-ticker" aria-hidden="true"><div><span>네이버 <i>·</i> 카카오 <i>·</i> 당근 <i>·</i> 인스타 <i>↗</i> 딜루프 <i>·</i> </span><span>네이버 <i>·</i> 카카오 <i>·</i> 당근 <i>·</i> 인스타 <i>↗</i> 딜루프 <i>·</i> </span><span>네이버 <i>·</i> 카카오 <i>·</i> 당근 <i>·</i> 인스타 <i>↗</i> 딜루프 <i>·</i> </span><span>네이버 <i>·</i> 카카오 <i>·</i> 당근 <i>·</i> 인스타 <i>↗</i> 딜루프 <i>·</i> </span></div></div>
 </section>
 <section class="roles wrap" id="service" aria-labelledby="roles-title">
   <div class="section-top"><p class="eyebrow">네이버·카카오·당근·인스타</p><h2 id="roles-title">가게는 사장님이.<br>온라인은 딜루프가.</h2></div>
@@ -51,9 +53,9 @@
   <div class="wrap">
     <div class="story-heading"><p class="eyebrow">한 번의 촬영, 여러 곳의 이야기</p><h2 id="content-title">한 번 잘 찍어서,<br>여러 번 제대로 씁니다.</h2><p class="story-intro">담백한 메뉴 소개부터 뜻밖의 동네 이야기까지.<br>가게에 맞는 숏폼을 만들고, 채널마다 다르게 씁니다.</p></div>
     <div class="editorial">
-      <figure class="reel-piece"><div class="reel-cover"><img src="assets/coffee-work.webp" alt="커피를 따르는 세로 영상의 커버 편집 예시" width="1800" height="2700"><p>오늘도,<br>한 잔에 진심.</p><span class="cover-meta">가게의 손길을 담은 한 편</span></div><figcaption><b>Instagram Reel</b><span>대표 숏폼 20–60초 · 영상 커버 편집 예시</span></figcaption></figure>
+      <figure class="reel-piece"><div class="reel-cover"><img src="assets/coffee-work.webp" alt="커피를 따르는 세로 영상의 커버 편집 예시" width="1800" height="2700"><p>우리 가게의<br>한 장면.</p><span class="cover-meta">숏폼 커버 편집 예시</span></div><figcaption><b>Instagram Reel</b><span>대표 숏폼 20–60초 · 영상 커버 편집 예시</span></figcaption></figure>
       <figure class="place-piece"><img src="assets/coffee-detail.webp" width="900" height="600" alt="커피를 따르는 장면을 가로로 편집한 네이버 소식용 사진"><figcaption><span class="channel-label">네이버 플레이스 소식</span><b>한 잔을 내리는 시간.</b><p>가게의 일상과 대표 메뉴를 소식으로 전합니다.</p></figcaption></figure>
-      <figure class="carrot-piece"><figcaption><span class="channel-label">당근 소식</span><b>이웃님,<br>커피 한 잔 하고 가세요.</b><p>같은 장면도 동네 이웃에게는 더 가깝게.</p></figcaption><img src="assets/coffee-square.webp" width="800" height="800" alt="컵과 커피가 중심이 되도록 편집한 당근 소식용 사진"></figure>
+      <figure class="carrot-piece"><figcaption><span class="channel-label">당근 소식</span><b>동네 이웃에게<br>가게 소식을.</b><p>같은 장면도 동네 이웃에게는 더 가깝게.</p></figcaption><img src="assets/coffee-square.webp" width="800" height="800" alt="컵과 커피가 중심이 되도록 편집한 당근 소식용 사진"></figure>
       <figure class="instagram-piece"><img src="assets/coffee-square.webp" width="800" height="800" alt="오늘의 커피를 담은 인스타그램 사진 콘텐츠 편집 예시"><figcaption><b>Instagram 사진</b><span>좋은 순간은 사진으로도 남깁니다.</span></figcaption></figure>
       <p class="editorial-note">하나의 소재, 서로 다른 쓰임.<br><span>실제 사진을 활용한 편집 예시이며 고객 운영 사례가 아닙니다.</span></p>
     </div>
@@ -241,6 +243,6 @@
 <a href="#book" class="m-cta btn btn-accent" aria-hidden="true" tabindex="-1">상담 예약하기</a>
 
 <script src="app.js?v=5" defer></script>
-<script src="design.js?v=2" defer></script>
+<script src="design.js?v=3" defer></script>
 </body>
 </html>
