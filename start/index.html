@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="referrer" content="no-referrer">
+<title>온라인 가게 등록 안내 · 딜루프랩스</title>
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<style>
+:root{--bg:#FBF7F1;--card:#fff;--ink:#1E1A16;--ink2:#5C544C;--ink3:#8C8379;--line:#E6DCCD;--accent:#E2582B;--accent2:#B8431C;--soft:#F3EBDF;--ok:#1B7F3B;--bad:#C0331A}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 -apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Malgun Gothic",sans-serif;word-break:keep-all;overflow-wrap:break-word;-webkit-text-size-adjust:100%}
+main{max-width:560px;margin:0 auto;padding:20px 16px 80px}
+header{display:flex;align-items:center;gap:8px;font-weight:800;font-size:17px;margin-bottom:18px}
+header i{width:22px;height:22px;border-radius:50%;background:var(--accent);position:relative;flex:none}
+header i::after{content:"";position:absolute;inset:6px;border-radius:50%;border:3px solid var(--bg)}
+h1{font-size:25px;line-height:1.3;margin:0 0 6px;letter-spacing:-.02em}
+h2{font-size:21px;line-height:1.35;margin:0 0 10px;letter-spacing:-.02em}
+p{margin:0}
+.sub{color:var(--ink2);font-size:16px}
+.bar{height:8px;border-radius:8px;background:var(--soft);overflow:hidden;margin:16px 0 6px}
+.bar b{display:block;height:100%;background:var(--accent);transition:width .3s}
+.count{font-size:14px;color:var(--ink3)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:20px 18px;margin:18px 0}
+.now{border:2px solid var(--accent)}
+.tag{display:inline-block;font-size:13px;font-weight:700;color:var(--accent2);background:#FBE6DC;border-radius:99px;padding:3px 10px;margin-bottom:10px}
+ol{margin:14px 0 0;padding-left:22px}
+ol li{margin:8px 0}
+.copy{display:flex;align-items:center;gap:10px;border:1px solid var(--line);border-radius:12px;padding:10px 12px;margin-top:10px;background:var(--bg)}
+.copy div{flex:1;min-width:0}
+.copy small{display:block;font-size:13px;color:var(--ink3)}
+.copy span{display:block;font-size:16px;white-space:pre-wrap}
+button,.btn{font:inherit;font-weight:700;border:0;border-radius:14px;min-height:54px;padding:0 18px;cursor:pointer;display:flex;align-items:center;justify-content:center;text-decoration:none;width:100%;margin-top:12px}
+.primary{background:var(--accent);color:#fff}
+.dark{background:var(--ink);color:#fff}
+.line{background:#fff;color:var(--ink);border:1.5px solid var(--ink)}
+.ghost{background:var(--soft);color:var(--ink)}
+.small{min-height:44px;width:auto;margin:0;padding:0 14px;font-size:15px;border-radius:10px;flex:none}
+button[disabled]{opacity:.55}
+.rowbox{padding:14px 0;border-top:1px solid var(--line)}
+.rowbox:first-child{border-top:0}
+.row{display:flex;align-items:center;justify-content:space-between;gap:10px}
+.rowbox .help{border-top:0;margin-top:6px;padding-top:0}
+.row b{font-size:16px}
+.st{font-size:13px;font-weight:700;border-radius:8px;padding:3px 9px;background:var(--soft);white-space:nowrap}
+.st.COMPLETE{background:#D1FAE5;color:var(--ok)}
+.st.NEED_HELP{background:#FDE2DD;color:var(--bad)}
+.rowwrap{flex:1;min-width:0}
+.rowwrap p{font-size:14px;color:var(--ink2);margin-top:2px}
+.help{margin-top:14px;border-top:1px dashed var(--line);padding-top:6px}
+textarea{font:inherit;width:100%;min-height:90px;border:1.5px solid var(--line);border-radius:12px;padding:12px;margin-top:10px}
+input[type=file]{font:inherit;width:100%;margin-top:10px}
+.note{font-size:14px;color:var(--ink3);margin-top:10px}
+.center{text-align:center;padding:40px 10px}
+[hidden]{display:none!important}
+</style>
+</head>
+<body>
+<main>
+  <header><i aria-hidden="true"></i>딜루프랩스</header>
+  <div id="loading" class="center sub">불러오는 중입니다…</div>
+  <div id="fatal" class="card center" hidden>
+    <h2>링크를 열 수 없습니다</h2>
+    <p class="sub" id="fatal-text"></p>
+    <a class="btn dark" href="tel:01027415806">딜루프에 전화하기</a>
+  </div>
+  <div id="app" hidden>
+    <h1 id="hello"></h1>
+    <p class="sub">한 번에 한 가지만 하시면 됩니다. 비밀번호는 어디에도 알려주지 않으셔도 됩니다.</p>
+    <div class="bar"><b id="bar"></b></div>
+    <p class="count" id="count"></p>
+    <div id="now"></div>
+    <div class="card" id="list"></div>
+    <p class="note" id="version"></p>
+  </div>
+</main>
+<script src="config.js"></script>
+<script src="start.js"></script>
+</body>
+</html>
