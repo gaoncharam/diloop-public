@@ -119,3 +119,11 @@ function checkOwnerSmsPermission() {
     console.log('Owner SMS external-service permission: approval required');
   }
 }
+
+// 운영자에게 추가 승인 화면을 안내한다. 토큰/인증키는 출력하지 않는다.
+function showOwnerSmsApproval() {
+  const info = ScriptApp.getAuthorizationInfo(ScriptApp.AuthMode.FULL);
+  console.log('Owner SMS authorization: ' + info.getAuthorizationStatus());
+  const url = info.getAuthorizationUrl();
+  if (url) console.log(url);
+}
