@@ -119,16 +119,43 @@
     return box;
   }
 
+  // 안내는 한 번에 한 문장씩 보여 준다. 다른 앱에 다녀와도 보던 자리를 기억한다.
+  var stepAt = {};
+  function stepper(p) {
+    var key = p.id + '/' + p.state + '/' + p.steps.length;
+    var i = Math.min(stepAt[key] || 0, p.steps.length - 1);
+    var box = el('div', 'stepper');
+    var n = el('div', 'n');
+    var t = el('div', 't');
+    var nav = el('div', 'nav');
+    var prev = el('button', 'ghost', '이전'); prev.type = 'button';
+    var next = el('button', 'dark', '다음'); next.type = 'button';
+    function show() {
+      stepAt[key] = i;
+      n.textContent = (i + 1) + ' / ' + p.steps.length;
+      t.textContent = p.steps[i];
+      prev.disabled = i === 0;
+      next.disabled = i === p.steps.length - 1;
+      next.textContent = i === p.steps.length - 1 ? '마지막입니다' : '다음';
+    }
+    prev.addEventListener('click', function () { if (i > 0) { i--; show(); } });
+    next.addEventListener('click', function () { if (i < p.steps.length - 1) { i++; show(); } });
+    nav.appendChild(prev); nav.appendChild(next);
+    box.appendChild(n); box.appendChild(t); box.appendChild(nav);
+    show();
+    return box;
+  }
+
   var DONE_LABEL = { create: '여기까지 했어요', verify: '신청했어요', access: '권한을 줬어요' };
 
   function nowCard(p) {
     var card = el('div', 'card now');
     card.appendChild(el('span', 'tag', '지금 하실 일 · ' + p.label));
     card.appendChild(el('h2', '', p.action));
-    if (p.steps.length) {
-      var ol = el('ol');
-      p.steps.forEach(function (s) { ol.appendChild(el('li', '', s)); });
-      card.appendChild(ol);
+    if (p.steps.length === 1) {
+      card.appendChild(el('p', 'sub', p.steps[0]));
+    } else if (p.steps.length > 1) {
+      card.appendChild(stepper(p));
     }
     p.copy.forEach(function (c) { card.appendChild(copyRow(c)); });
     (p.links || []).forEach(function (link) {
